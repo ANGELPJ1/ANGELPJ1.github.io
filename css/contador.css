@@ -1,0 +1,106 @@
+.contenedor-visitas {
+  display: flex; /* Coloca los elementos en línea */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 20px 40px;
+  margin: 40px auto; /* Espacio superior/inferior */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15), 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombras más intensas */
+  max-width: 800px;
+  animation: pulse 1.5s infinite; /* Efecto de pulsación */
+  position: relative; /* Necesario para las sombras internas */
+  overflow: hidden; /* Oculta cualquier contenido desbordado */
+}
+
+/* Sombras internas para más profundidad */
+.contenedor-visitas::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 8px;
+  z-index: -1; /* Coloca la sombra detrás del contenido */
+}
+
+/* Animación de pulsación */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.logos {
+  height: 130px;
+  width: 110px;
+  max-width: 300px; /* Tamaño del logo */
+  margin-right: 20px; /* Espacio entre logo y texto */
+}
+
+.texto-visitas {
+  display: flex;
+  flex-direction: column; /* Organiza el texto verticalmente */
+}
+
+.texto-visitas h2 {
+  margin: 0;
+  font-size: 3rem;
+  color: #0078d7; /* Azul llamativo */
+}
+
+.texto-visitas p {
+  margin: 5px 0 0;
+  font-size: 2rem;
+  color: #555555; /* Gris suave */
+}
+
+/* Media Queries para pantallas medianas */
+@media (max-width: 768px) {
+  .contenedor-visitas {
+    flex-direction: column; /* Cambia a diseño vertical */
+    text-align: center; /* Centra el texto */
+    max-width: 300px;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    max-width: 150px; /* Reduce el tamaño del logo */
+    margin: 0 0 15px 0; /* Añade margen inferior */
+  }
+
+  .texto-visitas h2 {
+    font-size: 1.8rem; /* Ajusta el tamaño del título */
+  }
+
+  .texto-visitas p {
+    font-size: 0.9rem; /* Ajusta el tamaño del subtítulo */
+  }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 480px) {
+  .contenedor-visitas {
+    padding: 10px 15px;
+    margin: 20px auto;
+  }
+
+  .logo {
+    max-width: 120px; /* Reduce aún más el logo */
+  }
+
+  .texto-visitas h2 {
+    font-size: 1.5rem; /* Reduce el tamaño del título */
+  }
+
+  .texto-visitas p {
+    font-size: 0.8rem; /* Reduce el tamaño del subtítulo */
+  }
+}
